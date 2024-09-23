@@ -17,12 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from my_app.views import index, about
+from my_app  import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('about/', about)
+    path('',views.index,name="principal"),
+    path('inicio',views.index,name="inicio"),
+    path('hola/<int:redirigir>/', views.holamundo,name="hola_mundo"),
+    path('otros/', views.otros,name="Otros"),
+    path('contacto/', views.contacto,name="contactos"),
+    path('prueba/<str:prueba>/', views.prueba,name="prueba"),
+    path('contacto/<str:nombre>/', views.contacto,name="contactos"),
 ]
 
 # mysite.com/ => index() => Hello World
