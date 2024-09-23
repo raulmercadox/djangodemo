@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name="principal"),
     path('inicio',views.index,name="inicio"),
+    path('hola/', views.holamundo,name="hola_mundo"),
     path('hola/<int:redirigir>/', views.holamundo,name="hola_mundo"),
     path('otros/', views.otros,name="Otros"),
     path('contacto/', views.contacto,name="contactos"),
